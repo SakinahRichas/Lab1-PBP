@@ -43,51 +43,51 @@
 <h>{{nama}}</h> -->
 
 
-<div class="container-fluid">
-  <table>
-      <tr>
-      <th>Nama Barang</th>
-      <th>Harga Barang</th>
-      <th>Deskripsi</th>
-      </tr>
-      {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-      {% for barang in list_barang %}
-      <tr>
-          <th>{{barang.nama_barang}}</th>
-          <th>{{barang.harga_barang}}</th>
-          <th>{{barang.deskripsi}}</th>
-      </tr>
-  {% endfor %}
-  </table>
-  <h5>Sesi terakhir login: {{ last_login }}</h5>
 
-  <hr />
-    
-      <h4>Tambah Barang</h4>
-      <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-          <tr>
-            <td>Nama Barang: </td>
-            <td><input type="text" id="nama_barang" name="nama_barang" placeholder="Nama Barang" class="form-control"></td>
-          </tr>
-    
-          <tr>
-            <td>Harga Barang: </td>
-            <td><input type="number" id="harga_barang" name="harga_barang" placeholder="Harga Barang" class="form-control"></td>
-          </tr>
-    
-          <tr>
-            <td>Deskripsi: </td>
-            <td><textarea class="form-control" id="deskripsi" name="deskripsi"></textarea></td>
-          </tr>
-    
-          <tr>
-            <td></td>
-            <td><input class="btn btn-primary" type="submit" value="Submit" id="newBtn"></td>
-          </tr>
-        </table>
-      </form>
+<table>
+    <tr>
+    <th>Nama Barang</th>
+    <th>Harga Barang</th>
+    <th>Deskripsi</th>
+    </tr>
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for barang in list_barang %}
+    <tr>
+        <th>{{barang.nama_barang}}</th>
+        <th>{{barang.harga_barang}}</th>
+        <th>{{barang.deskripsi}}</th>
+    </tr>
+{% endfor %}
+</table>
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+
+<hr />
+  
+    <h4>Tambah Barang</h4>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td>Nama Barang: </td>
+          <td><input type="text" id="nama_barang" name="nama_barang" placeholder="Nama Barang" class="form-control"></td>
+        </tr>
+  
+        <tr>
+          <td>Harga Barang: </td>
+          <td><input type="number" id="harga_barang" name="harga_barang" placeholder="Harga Barang" class="form-control"></td>
+        </tr>
+  
+        <tr>
+          <td>Deskripsi: </td>
+          <td><textarea class="form-control" id="deskripsi" name="deskripsi"></textarea></td>
+        </tr>
+  
+        <tr>
+          <td></td>
+          <td><input class="btn btn-primary" type="submit" value="Submit" id="newBtn"></td>
+        </tr>
+      </table>
+    </form>
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -113,7 +113,7 @@
           alert("Done!")
           fetchData()
         },
-        // contentType: "application/json",
+        
         dataType: 'json'
       });
     }
