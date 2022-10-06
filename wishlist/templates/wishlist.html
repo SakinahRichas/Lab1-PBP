@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  
     
+  
+  
+
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
+        
       <a class="navbar-brand" href="#">{{nama}}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,18 +33,22 @@
           <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li> -->
+
+          
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+              Choose Data Delivery
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="{% url 'wishlist:show_xml' %}">XML</a></li>
+              <li><a class="dropdown-item" href="{% url 'wishlist:show_json' %}">JSON</a></li>
             </ul>
           </li>
 
           <button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+
+          
 
         </ul>
       </div>
@@ -52,6 +59,7 @@
 
 <!-- <h5>Nama: </h5>
 <h>{{nama}}</h> -->
+
 
 
 <table>
